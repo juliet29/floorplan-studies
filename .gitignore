@@ -1,0 +1,35 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+
+**/_03_models/** 
+/static/p1_1_gen/_05_figures/figures
+static/graphbem/_01_inputs/graphBEM
+
+
+
+
+*.html
+
+
+*.pickle
+*.pkl
+
+
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+.log
+*.env
+.DS_Store

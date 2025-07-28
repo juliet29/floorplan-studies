@@ -4,17 +4,17 @@ from graph2plan.dual.interfaces import Domains
 from graph2plan.rel.rel2 import STGraphs
 from rich import print as rprint
 from utils4plans.io import read_pickle, write_pickle, write_graph
-from studies.quick_paths import LocalStaticPaths
-from studies.three_plan.generation.generate import generate_connectivities
+
+from studies.three_plan.generate import generate_connectivities
 from utils4plans.printing import StyledConsole
+from studies.three_plan.paths import path_class
 
 
-qp = LocalStaticPaths("three_plan")
 DEGEN_PICKLE = "test_degen_cycle_results_250726"
 
 
 def save_case_and_connectivities(case_name: str, domains: Domains, st_graphs: STGraphs):
-    folder_path = get_folder_path(qp.plans, case_name)
+    folder_path = get_folder_path(path_class.plans, case_name)
     # save floorpan
     domains.write_floorplan(folder_path)
     # save st graphs
@@ -31,13 +31,13 @@ def save_case_and_connectivities(case_name: str, domains: Domains, st_graphs: ST
 
 def run_degen_case_and_write_pickle():
     merged_doms, T1, T2 = test_degen_cycle()
-    write_pickle([merged_doms, T1, T2], qp.temp, DEGEN_PICKLE)
+    write_pickle([merged_doms, T1, T2], path_class.temp, DEGEN_PICKLE)
 
 
 if __name__ == "__main__":
     # run_degen_case_and_write_pickle()
 
-    merged_doms, T1, T2 = read_pickle(qp.temp, DEGEN_PICKLE)
+    merged_doms, T1, T2 = read_pickle(path_class.temp, DEGEN_PICKLE)
     rprint(merged_doms)
     save_case_and_connectivities("three_plan", merged_doms, STGraphs(T1, T2))
 

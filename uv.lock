@@ -1474,6 +1474,7 @@ version = "0.1.0"
 source = { editable = "." }
 dependencies = [
     { name = "graph2plan" },
+    { name = "networkx" },
     { name = "plan2eplus" },
     { name = "pyprojroot" },
     { name = "rich" },
@@ -1483,10 +1484,11 @@ dependencies = [
 [package.metadata]
 requires-dist = [
     { name = "graph2plan", specifier = ">=0.1.1" },
+    { name = "networkx", specifier = ">=3.5" },
     { name = "plan2eplus", specifier = ">=0.1.0" },
     { name = "pyprojroot", specifier = ">=0.3.0" },
     { name = "rich", specifier = ">=14.1.0" },
-    { name = "utils4plans", specifier = ">=0.1.2" },
+    { name = "utils4plans", specifier = "==0.1.*" },
 ]
 
 [[package]]
@@ -1580,15 +1582,16 @@ wheels = [
 
 [[package]]
 name = "utils4plans"
-version = "0.1.2"
+version = "0.1.4"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "networkx" },
+    { name = "pytest" },
     { name = "rich" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/f4/e5/61619f7f7b8be113a0c2d613c366a7b66cbfb686b7cf7b3c85e2a561a861/utils4plans-0.1.2.tar.gz", hash = "sha256:21df8c9fc3bcfb917d080e5de43f59f61bc74b7358f6b38a671a81ac073c35d9", size = 2464, upload-time = "2025-07-27T20:53:02.258Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/26/ed/1b51cae184cf06bb24bd67df1195c5f3693b57f0bce1566490daabe12d37/utils4plans-0.1.4.tar.gz", hash = "sha256:01f7fc73c4fb9ea1f2a52ab32e96ed5d0adbbe6864cf81c37aedfadfd5baf395", size = 2907, upload-time = "2025-07-28T12:32:37.758Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/bc/84/73fe3f60d5672ea635e13c055c493650ebae214762b853d3843629b7f206/utils4plans-0.1.2-py3-none-any.whl", hash = "sha256:3824fbc68bdb762ffeafde627f730bee4e8a8a1a3c02b7cb379f4ce410d0785a", size = 4450, upload-time = "2025-07-27T20:53:01.121Z" },
+    { url = "https://files.pythonhosted.org/packages/76/6d/341a2bbd001e7c55a9b04734431d105f73f861b620266f138001e427de09/utils4plans-0.1.4-py3-none-any.whl", hash = "sha256:fa3b889495922ebaf8a292d491713c084aaa571e78527ac4a768ae4fb84909b6", size = 4962, upload-time = "2025-07-28T12:32:36.631Z" },
 ]
 
 [[package]]
