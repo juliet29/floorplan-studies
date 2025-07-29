@@ -1,32 +1,53 @@
 from dataclasses import dataclass
 from enum import Enum, auto
 from utils4plans.graphs import Edge, EdgeList
-from typing import NamedTuple
+from typing import NamedTuple, TypedDict
 
+
+# TODO extend edgelist to have a "to-path" feature 
+
+class Path(EdgeList):
+    @property
+    def path(self):
+        # TODO bc/ using NX path library, know the edges will be ordered as a path, but have a simple check for now.. 
+        p =  [i.u for i in self.edges] + [self.edges[-1].v]
+        assert len(set(p)) == len(self.edges) + 1
+        return p
+    
 
 class Orientation(Enum):
     X = auto()
     Y = auto()
 
 
+
+class GraphPathPair(NamedTuple):
+    graph_name: str
+    path_ix: int
+
+
 @dataclass
 class STGraph:
     name: str
-    paths: list[EdgeList]
+    paths: list[Path]
     orientation: Orientation
 
-    # TODO create from networkx graph, orientation (use to get source/target nodes.. )
-
     # TOOD create path dict
-    def create_path_dict(self):
+    @property
+    def path_dict(self):
         return {ix: path for ix, path in enumerate(self.paths)}
+    
+    @property
+    def graph_path_pairs(self):
+        return [GraphPathPair(self.name, ix) for ix in range(len(self.paths))]
+
+graph_dict: dict[str, STGraph] = {
+
+}
 
 
-class GraphPathPair(NamedTuple):
-    graph: str
-    path_ix: int
+    # todo be able to return the edges.. which means some named graph dict.. 
 
-# TODO function to assign plan paths uses GraphPathPair 
 
 @dataclass
 class PlanPaths:
@@ -35,3 +56,5 @@ class PlanPaths:
 
     #TODO get the actual edges.. 
     # get the paths. 
+
+# TODO function to assign plan paths uses GraphPathPair and creates a list of planpaths.. 
