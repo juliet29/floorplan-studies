@@ -1,0 +1,83 @@
+{
+  "graph_paths": {
+    "TY": {
+      "0": [
+        ["v_s", "a"],
+        ["a", "c"],
+        ["c", "v_n"]
+      ],
+      "1": [
+        ["v_s", "b"],
+        ["b", "c"],
+        ["c", "v_n"]
+      ]
+    },
+    "TX": {
+      "0": [
+        ["v_w", "c"],
+        ["c", "v_e"]
+      ],
+      "1": [
+        ["v_w", "b"],
+        ["b", "a"],
+        ["a", "v_e"]
+      ]
+    }
+  },
+  "connectivities": {
+    "0": [{ "graph": "TY", "path_ix": 0 }],
+    "1": [{ "graph": "TY", "path_ix": 1 }],
+    "2": [{ "graph": "TX", "path_ix": 0 }],
+    "3": [{ "graph": "TX", "path_ix": 1 }],
+    "4": [
+      { "graph": "TY", "path_ix": 0 },
+      { "graph": "TY", "path_ix": 1 }
+    ],
+    "5": [
+      { "graph": "TY", "path_ix": 0 },
+      { "graph": "TX", "path_ix": 0 }
+    ],
+    "6": [
+      { "graph": "TY", "path_ix": 0 },
+      { "graph": "TX", "path_ix": 1 }
+    ],
+    "7": [
+      { "graph": "TY", "path_ix": 1 },
+      { "graph": "TX", "path_ix": 0 }
+    ],
+    "8": [
+      { "graph": "TY", "path_ix": 1 },
+      { "graph": "TX", "path_ix": 1 }
+    ],
+    "9": [
+      { "graph": "TX", "path_ix": 0 },
+      { "graph": "TX", "path_ix": 1 }
+    ],
+    "10": [
+      { "graph": "TY", "path_ix": 0 },
+      { "graph": "TY", "path_ix": 1 },
+      { "graph": "TX", "path_ix": 0 }
+    ],
+    "11": [
+      { "graph": "TY", "path_ix": 0 },
+      { "graph": "TY", "path_ix": 1 },
+      { "graph": "TX", "path_ix": 1 }
+    ],
+    "12": [
+      { "graph": "TY", "path_ix": 0 },
+      { "graph": "TX", "path_ix": 0 },
+      { "graph": "TX", "path_ix": 1 }
+    ],
+    "13": [
+      { "graph": "TY", "path_ix": 1 },
+      { "graph": "TX", "path_ix": 0 },
+      { "graph": "TX", "path_ix": 1 }
+    ],
+    "14": [
+      { "graph": "TY", "path_ix": 0 },
+      { "graph": "TY", "path_ix": 1 },
+      { "graph": "TX", "path_ix": 0 },
+      { "graph": "TX", "path_ix": 1 }
+    ]
+  }
+}
